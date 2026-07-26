@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>جرين ارك — بورتفوليو ٢٠٢٦</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green-950:#0C1811;
+  --green-900:#12241A;
+  --green-800:#1C3627;
+  --green-700:#264A34;
+  --sage:#8AA083;
+  --sage-soft:#C7D2BF;
+  --cream:#F4F1E7;
+  --cream-2:#ECE7D8;
+  --ink:#161A17;
+  --muted:#5C665C;
+  --line:rgba(28,54,39,.16);
+  --accent:#B0894F;
+  --fd:"Noto Kufi Arabic", sans-serif;
+  --fb:"IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#cfccc2}
+body{font-family:var(--fb);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+/* ---- A4 page shell ---- */
+.page{
+  width:210mm;height:297mm;background:#fff;position:relative;overflow:hidden;
+  margin:12mm auto;box-shadow:0 10px 40px rgba(0,0,0,.28);
+  display:flex;flex-direction:column;
+}
+.pad{padding:16mm 16mm 14mm}
+.eyebrow{font-size:9pt;letter-spacing:.06em;font-weight:700;color:var(--green-700);display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--accent)}
+.pnum{position:absolute;bottom:9mm;left:14mm;font-size:9pt;letter-spacing:.1em;color:var(--muted)}
+.pfoot{position:absolute;bottom:9mm;right:14mm;font-size:8.5pt;color:var(--muted)}
+
+/* ---- COVER ---- */
+.cover{background:var(--green-950);color:var(--cream);padding:0}
+.cover .cimg{position:absolute;inset:0}
+.cover .cimg img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.cover .cveil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,17,.55),rgba(12,24,17,.35) 42%,rgba(12,24,17,.92))}
+.cover .cinner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:20mm 18mm}
+.cover .clogo{height:8mm;width:auto;align-self:flex-start;filter:brightness(0) invert(1)}
+.cover .ctitle{font-family:var(--fd);font-weight:700;font-size:44pt;line-height:1.28;letter-spacing:-.01em}
+.cover .ctitle b{font-weight:800;color:var(--sage-soft)}
+.cover .csub{margin-top:7mm;max-width:76%;font-size:11.5pt;color:rgba(244,241,231,.85);line-height:1.8}
+.cover .cmeta{display:flex;justify-content:space-between;align-items:flex-end;font-size:10pt;color:rgba(244,241,231,.82)}
+.cover .cmeta .yr{font-family:var(--fd);font-size:16pt;font-weight:600;color:var(--cream)}
+
+/* ---- generic ---- */
+.h-lg{font-family:var(--fd);font-weight:700;font-size:23pt;line-height:1.5;color:var(--green-900)}
+.eyebrow-wrap{margin-bottom:4mm}
+
+/* ---- PROJECT page ---- */
+.proj{padding:0}
+.proj .pimg{height:57%;position:relative;overflow:hidden;background:var(--green-950)}
+.proj .pimg img{width:100%;height:100%;object-fit:cover}
+.proj .pno{position:absolute;top:10mm;right:14mm;font-family:var(--fd);font-weight:700;font-size:14pt;color:var(--cream);background:rgba(12,24,17,.4);border:1px solid rgba(244,241,231,.4);width:16mm;height:16mm;display:flex;align-items:center;justify-content:center}
+.proj .pbody{flex:1;padding:11mm 16mm 14mm;display:flex;flex-direction:column}
+.proj .kick{font-size:9pt;letter-spacing:.04em;font-weight:700;color:var(--green-700)}
+.proj .ptitle{font-family:var(--fd);font-weight:700;font-size:22pt;line-height:1.4;color:var(--green-900);margin:3mm 0 4mm}
+.proj .pdesc{font-size:11.5pt;color:var(--muted);max-width:92%;line-height:1.85}
+.proj .pmeta{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6mm;border-top:1px solid var(--line);padding-top:6mm}
+.proj .pmeta .k{font-size:8pt;letter-spacing:.03em;color:var(--muted)}
+.proj .pmeta .v{font-size:10.5pt;font-weight:600;color:var(--green-900);margin-top:1.5mm}
+
+/* ---- STUDIO page ---- */
+.studio-hero{height:42%;position:relative;overflow:hidden}
+.studio-hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.studio-hero .tag{position:absolute;right:16mm;bottom:8mm;color:var(--cream);font-size:9pt;letter-spacing:.04em;background:rgba(12,24,17,.42);padding:5px 11px}
+.two{display:grid;grid-template-columns:1.3fr .9fr;gap:12mm;margin-top:8mm}
+.quote{font-family:var(--fd);font-weight:600;font-size:14pt;line-height:1.7;color:var(--green-800);border-inline-start:3px solid var(--accent);padding-inline-start:14px;margin:5mm 0}
+.two p{font-size:10.5pt;color:var(--muted);margin-bottom:3.5mm;line-height:1.85}
+.sign{margin-top:5mm}
+.sign .nm{font-family:var(--fd);font-weight:600;font-size:12pt;color:var(--green-900)}
+.sign .rl{font-size:9.5pt;color:var(--muted)}
+.facts{border-top:1px solid var(--line)}
+.fact{display:flex;justify-content:space-between;gap:10px;padding:3.2mm 0;border-bottom:1px solid var(--line);font-size:10pt}
+.fact .k{color:var(--muted)}.fact .v{font-weight:600;color:var(--green-900);text-align:left}
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:7mm}
+.sectors .s .n{font-family:var(--fd);font-weight:700;color:var(--accent);font-size:12pt}
+.sectors .s h4{font-family:var(--fd);font-weight:600;font-size:12pt;margin:2mm 0 1.5mm;color:var(--green-900)}
+.sectors .s p{font-size:9pt;color:var(--muted);line-height:1.7}
+
+/* ---- PROCESS page ---- */
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11mm;margin-top:7mm;align-items:start}
+.proc-fig{aspect-ratio:1/1;overflow:hidden;background:var(--cream-2)}
+.proc-fig img{width:100%;height:100%;object-fit:cover}
+.proc-cap{font-size:8.6pt;color:var(--muted);margin-top:2.5mm;line-height:1.6}
+.steps{border-top:1px solid var(--line)}
+.stp{display:grid;grid-template-columns:auto 1fr;gap:2mm 5mm;padding:3.6mm 0;border-bottom:1px solid var(--line)}
+.stp .sn{grid-row:span 2;font-family:var(--fd);font-weight:700;font-size:17pt;color:var(--accent);line-height:1}
+.stp h4{font-family:var(--fd);font-weight:600;font-size:12.5pt;color:var(--green-900)}
+.stp p{font-size:9pt;color:var(--muted);line-height:1.65}
+
+/* ---- CONTACT / back ---- */
+.back{background:var(--green-900);color:var(--cream);padding:0}
+.back .binner{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:20mm 18mm}
+.back .blogo{height:8mm;width:auto;align-self:flex-start;filter:brightness(0) invert(1)}
+.back h2{font-family:var(--fd);font-weight:700;font-size:26pt;line-height:1.5;max-width:16ch}
+.back .brow{display:grid;grid-template-columns:repeat(2,1fr);gap:8mm 12mm;max-width:80%}
+.back .bk{font-size:8.5pt;letter-spacing:.04em;color:var(--sage)}
+.back .bv{font-size:12pt;font-weight:600;margin-top:2mm}
+.back .bnote{font-size:9pt;color:rgba(244,241,231,.6)}
+
+/* ---- screen helper ---- */
+.helper{max-width:210mm;margin:14mm auto 0;padding:0 4mm;color:#3c4a3c;font-family:var(--fb);font-size:12px;line-height:1.7}
+.helper b{color:#1c3627}
+
+@media print{
+  html,body{background:#fff}
+  .helper{display:none}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@page{size:A4;margin:0}
+</style>
+</head>
+<body>
+
+<div class="helper">بورتفوليو جرين ارك · <b>للتصدير إلى PDF:</b> اضغط ⌘P / Ctrl-P ← الوجهة «حفظ بصيغة PDF» ← الهوامش «بلا» ← فعّل «رسومات الخلفية». ٨ صفحات، مقاس A4.</div>
+
+<!-- ===== 1 · الغلاف ===== -->
+<section class="page cover">
+  <div class="cimg"><img src="assets/cover.jpg" alt="مجمع سكني بالطراز النجدي عند الغروب" /></div>
+  <div class="cveil"></div>
+  <div class="cinner">
+    <img class="clogo" src="assets/logo-green-ar.png" alt="جرين ارك" />
+    <div>
+      <div class="ctitle">بورتفوليو<br><b>٢٠٢٦.</b></div>
+      <p class="csub">ممارسة معمارية مستقلة تصمّم وتنفّذ المشاريع في أنحاء المملكة — من أول موجز حتى التسليم النهائي.</p>
+    </div>
+    <div class="cmeta">
+      <span>تجاري · حكومي · سكني</span>
+      <span class="yr">الرياض · جدة</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 · مشروع ٠١ ===== -->
+<section class="page proj">
+  <div class="pimg"><img src="assets/projects/compound.jpg" alt="مجمع سكني بالطراز النجدي" /><div class="pno">٠١</div></div>
+  <div class="pbody">
+    <span class="kick">سكني · مجتمع نجدي</span>
+    <h3 class="ptitle">مجمع سكني بالطراز النجدي</h3>
+    <p class="pdesc">مجموعة منازل مسوّرة بمواقف مظلّلة وممر مشترك، مُفصّلة بالطراز النجدي — مصمّمة للخصوصية وسهولة الحركة وقيمة إعادة البيع.</p>
+    <div class="pmeta">
+      <div><div class="k">الموقع</div><div class="v">الرياض</div></div>
+      <div><div class="k">القطاع</div><div class="v">سكني</div></div>
+      <div><div class="k">النوع</div><div class="v">وحدات متعددة</div></div>
+      <div><div class="k">النطاق</div><div class="v">من الفكرة إلى التسليم</div></div>
+    </div>
+  </div>
+  <div class="pfoot">أعمال مختارة</div><div class="pnum">٠٢</div>
+</section>
+
+<!-- ===== 3 · مشروع ٠٢ ===== -->
+<section class="page proj">
+  <div class="pimg"><img src="assets/projects/villa.jpg" alt="استراحة خاصة بالطراز السلماني" /><div class="pno">٠٢</div></div>
+  <div class="pbody">
+    <span class="kick">سكني · طراز سلماني</span>
+    <h3 class="ptitle">استراحة خاصة</h3>
+    <p class="pdesc">مسكن خاص ومجلس تقليدي بحجر دافئ وأفنية من الجهنمية، مرتبط بكود وادي حنيفة والطراز السلماني.</p>
+    <div class="pmeta">
+      <div><div class="k">الموقع</div><div class="v">عرقة، الرياض</div></div>
+      <div><div class="k">القطاع</div><div class="v">سكني</div></div>
+      <div><div class="k">الطراز</div><div class="v">سلماني · وادي حنيفة</div></div>
+      <div><div class="k">النطاق</div><div class="v">من الفكرة إلى التسليم</div></div>
+    </div>
+  </div>
+  <div class="pfoot">أعمال مختارة</div><div class="pnum">٠٣</div>
+</section>
+
+<!-- ===== 4 · مشروع ٠٣ ===== -->
+<section class="page proj">
+  <div class="pimg"><img src="assets/projects/landscape.jpg" alt="فناء مدخل خاص ببرجولة وزراعة" /><div class="pno">٠٣</div></div>
+  <div class="pbody">
+    <span class="kick">تنسيق · فناء</span>
+    <h3 class="ptitle">فناء وحديقة</h3>
+    <p class="pdesc">فناء مدخل خاص — برجولة وممر حجري وزراعة، مُصاغ كتسلسل وصولٍ هادئ ومساحة راحة خارجية.</p>
+    <div class="pmeta">
+      <div><div class="k">الموقع</div><div class="v">الرياض</div></div>
+      <div><div class="k">القطاع</div><div class="v">تنسيق مواقع</div></div>
+      <div><div class="k">النوع</div><div class="v">فناء خاص</div></div>
+      <div><div class="k">النطاق</div><div class="v">تصميم إلى تسليم</div></div>
+    </div>
+  </div>
+  <div class="pfoot">أعمال مختارة</div><div class="pnum">٠٤</div>
+</section>
+
+<!-- ===== 5 · مشروع ٠٤ ===== -->
+<section class="page proj">
+  <div class="pimg"><img src="assets/projects/apartments.jpg" alt="مبنى شقق سكنية معاصر" /><div class="pno">٠٤</div></div>
+  <div class="pbody">
+    <span class="kick">تجاري · متعدد الاستخدام</span>
+    <h3 class="ptitle">شقق سكنية</h3>
+    <p class="pdesc">مبنى شقق معاصر بنوى حجرية، متوازن للإضاءة والتكلفة وكفاءة التأجير — مبني وفق التصريح والميزانية.</p>
+    <div class="pmeta">
+      <div><div class="k">الموقع</div><div class="v">في أنحاء المملكة</div></div>
+      <div><div class="k">القطاع</div><div class="v">تجاري</div></div>
+      <div><div class="k">النوع</div><div class="v">متعدد الاستخدام</div></div>
+      <div><div class="k">النطاق</div><div class="v">من الفكرة إلى التسليم</div></div>
+    </div>
+  </div>
+  <div class="pfoot">أعمال مختارة</div><div class="pnum">٠٥</div>
+</section>
+
+<!-- ===== 6 · الاستوديو ===== -->
+<section class="page">
+  <div class="studio-hero">
+    <img src="assets/studio.jpg" alt="مجلس سعودي تقليدي بتصميم جرين ارك" />
+    <span class="tag">الاستوديو — جرين ارك ديزاين</span>
+  </div>
+  <div class="pad" style="flex:1;display:flex;flex-direction:column">
+    <div class="eyebrow-wrap"><span class="eyebrow">من نحن</span></div>
+    <h2 class="h-lg">من الفكرة إلى الإنجاز، تحت سقف واحد.</h2>
+    <div class="two">
+      <div>
+        <div class="quote">«ما أقترحه، أستطيع تنفيذه والإشراف عليه وإنهاءه في الموقع.»</div>
+        <p>تأسّس جرين ارك على يد <b>بلال شعث</b>، معماري ومهندس مشاريع ميداني يدير المشاريع من أول موجز حتى التسليم النهائي — في الأعمال التجارية والحكومية والسكنية.</p>
+        <p>يتعامل المطوّرون مع ممارسة واحدة مسؤولة عن التصميم والاعتمادات والتوريد والإشراف والإغلاق — مع مراعاة الكود السعودي والتكلفة في كل مرحلة.</p>
+        <div class="sign"><div class="nm">بلال شعث</div><div class="rl">المؤسس والمعماري الرئيسي</div></div>
+      </div>
+      <div>
+        <div class="facts">
+          <div class="fact"><span class="k">مقرّنا</span><span class="v">الرياض وجدة</span></div>
+          <div class="fact"><span class="k">التغطية</span><span class="v">أنحاء المملكة</span></div>
+          <div class="fact"><span class="k">القطاعات</span><span class="v">تجاري · حكومي · سكني</span></div>
+          <div class="fact"><span class="k">الالتزام</span><span class="v">الكود السعودي</span></div>
+          <div class="fact"><span class="k">البصمة</span><span class="v">الطراز النجدي والسلماني</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="sectors">
+      <div class="s"><div class="n">٠١</div><h4>تجاري</h4><p>محلات ومكاتب واستخدام مختلط — مصمَّمة للحركة والتصاريح وبناء يلتزم بالميزانية.</p></div>
+      <div class="s"><div class="n">٠٢</div><h4>حكومي</h4><p>أعمال عامة ومؤسسية وفق الكود السعودي، من المخططات العامة حتى التشطيب الكامل.</p></div>
+      <div class="s"><div class="n">٠٣</div><h4>سكني</h4><p>منازل واستراحات ومجتمعات متجذّرة في الطراز النجدي والسلماني — عصرية وقابلة للسكن.</p></div>
+    </div>
+  </div>
+  <div class="pfoot">جرين ارك · بورتفوليو ٢٠٢٦</div><div class="pnum">٠٦</div>
+</section>
+
+<!-- ===== 7 · كيف نفكر ===== -->
+<section class="page">
+  <div class="pad" style="flex:1;display:flex;flex-direction:column">
+    <div class="eyebrow-wrap"><span class="eyebrow">كيف نفكر — من الفكرة إلى المبنى</span></div>
+    <h2 class="h-lg">خطٌّ واحد متصل من فكرتك حتى تسليم المفاتيح.</h2>
+    <div class="proc-grid">
+      <div>
+        <figure class="proc-fig"><img src="assets/process-board.jpg" alt="لوحة مواد وتفاصيل" /></figure>
+        <div class="proc-cap">التفكير مُجسّدًا — لوحة مواد وتفاصيل من مشروع مجلس.</div>
+      </div>
+      <div class="steps">
+        <div class="stp"><div class="sn">٠١</div><h4>الموجز والمفهوم</h4><p>تُصاغ الأهداف والأرض والميزانية في مفهوم يحترم الأرض والكود والعائد الذي تحتاجه.</p></div>
+        <div class="stp"><div class="sn">٠٢</div><h4>التصميم والتصوّر</h4><p>مخططات تفصيلية ونماذج ثلاثية الأبعاد — لترى وتقرّر قبل صبّ أول أساس.</p></div>
+        <div class="stp"><div class="sn">٠٣</div><h4>التوريد والتكلفة</h4><p>مواد ومقاولون وأرقام حقيقية، ليكون التصميم المعتمَد هو نفسه المُنفَّذ.</p></div>
+        <div class="stp"><div class="sn">٠٤</div><h4>التنفيذ والإشراف</h4><p>هندسة موقعية وإشراف على البناء، مع الحفاظ على الجودة والجدول والسلامة وفق الخطة.</p></div>
+        <div class="stp"><div class="sn">٠٥</div><h4>التشطيب والتسليم</h4><p>تشطيبات نهائية وفحوصات وتسليم نظيف — مع إنجاز مستندات الإغلاق بشكل صحيح.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="pfoot">جرين ارك · بورتفوليو ٢٠٢٦</div><div class="pnum">٠٧</div>
+</section>
+
+<!-- ===== 8 · تواصل / الغلاف الخلفي ===== -->
+<section class="page back">
+  <div class="binner">
+    <img class="blogo" src="assets/logo-green-ar.png" alt="جرين ارك" />
+    <div>
+      <div class="eyebrow-wrap"><span class="eyebrow" style="color:var(--sage)">لنبدأ الحديث</span></div>
+      <h2>لديك أرض أو تصريح أو فكرة؟</h2>
+      <p style="margin-top:5mm;color:rgba(244,241,231,.8);font-size:11.5pt;max-width:58%;line-height:1.85">أخبرنا بالهدف والقيود. سنقول لك بصدق ما يتطلّبه بناؤه — ثم نبنيه.</p>
+    </div>
+    <div>
+      <div class="brow">
+        <div><div class="bk">البريد الإلكتروني</div><div class="bv" dir="ltr" style="text-align:right">belalshaat1@gmail.com</div></div>
+        <div><div class="bk">الهاتف</div><div class="bv" dir="ltr" style="text-align:right">+966 59 504 0782</div></div>
+        <div><div class="bk">مقرّنا</div><div class="bv">الرياض وجدة</div></div>
+        <div><div class="bk">إنستغرام</div><div class="bv" dir="ltr" style="text-align:right">@greenarchgdesign</div></div>
+      </div>
+      <div class="bnote" style="margin-top:10mm">© ٢٠٢٦ جرين ارك · عمارة من الفكرة إلى المبنى · المملكة العربية السعودية</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

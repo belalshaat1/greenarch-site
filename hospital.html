@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Green Arch — Hospital Grounds, Landscape</title>
+<meta name="description" content="Government hospital landscape by Green Arch — 25,000 m² of shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green-950:#0C1811;--green-900:#12241A;--green-800:#1C3627;--green-700:#264A34;
+  --sage:#8AA083;--sage-soft:#C7D2BF;--white:#FFFFFF;--cream:#F4F1E7;--cream-2:#ECE7D8;
+  --ink:#14180F;--muted:#5C665C;--line:rgba(20,24,15,.13);--accent:#B0894F;
+  --font-display:"Fraunces",Georgia,serif;--font-body:"Manrope",system-ui,sans-serif;
+  --maxw:1280px;--gutter:clamp(18px,4.5vw,64px);--ease:cubic-bezier(.22,.61,.36,1);
+}
+html[dir="rtl"]{--font-display:"Noto Kufi Arabic",sans-serif;--font-body:"IBM Plex Sans Arabic",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:15px}
+body{font-family:var(--font-body);background:var(--cream);color:var(--ink);line-height:1.5;font-size:.92rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+::selection{background:var(--green-800);color:var(--cream)}
+.grain{position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px}
+.grunge{position:relative}
+.grunge::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");background-size:cover}
+.grunge>*{position:relative;z-index:1}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--green-700);display:inline-flex;align-items:center;gap:.6em}
+html[dir="rtl"] .eyebrow{letter-spacing:.08em;font-weight:600}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor;opacity:.55}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+/* nav */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,box-shadow .4s,padding .4s;padding:16px 0;color:var(--cream)}
+header.nav.scrolled{background:rgba(255,255,255,.9);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line);padding:10px 0;color:var(--ink)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.82rem;font-weight:600;color:currentColor;opacity:.85;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:currentColor;transition:width .3s}
+.nav-links a:hover{opacity:1}.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang-toggle{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.74rem;border:1px solid currentColor;padding:7px 12px;color:currentColor;opacity:.9}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.8rem;background:var(--green-800);color:var(--cream);padding:11px 20px;transition:transform .25s,background .25s}
+.nav:not(.scrolled) .btn{background:var(--cream);color:var(--green-900)}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:14px;height:14px}
+html[dir="rtl"] .btn svg{transform:scaleX(-1)}
+.nav-toggle{display:none;width:40px;height:40px;border:1px solid currentColor;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:17px;height:2px;background:currentColor}
+.nav-toggle span{position:relative}.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0}
+.nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
+/* hero */
+.hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--cream)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,17,.35),rgba(12,24,17,.05) 34%,rgba(12,24,17,.78) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:clamp(34px,6vh,64px)}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:var(--sage-soft);margin-bottom:16px}
+.back svg{width:14px;height:14px}html[dir="rtl"] .back svg{transform:scaleX(-1)}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,7vw,5.6rem);line-height:1;letter-spacing:-.02em}
+html[dir="rtl"] .hero h1{line-height:1.4;font-weight:700}
+.hero .lead{margin-top:16px;font-size:1.02rem;max-width:52ch;color:rgba(244,241,231,.9)}
+.chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.72rem;font-weight:600;letter-spacing:.02em;color:var(--cream);border:1px solid rgba(244,241,231,.35);padding:7px 13px;border-radius:100px}
+.chip b{color:var(--sage-soft);font-weight:600}
+/* sections */
+.pad{padding:clamp(56px,8vw,104px) 0}
+.sec-head{max-width:720px;margin-bottom:clamp(28px,3.5vw,44px)}
+.sec-head h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.7rem,4vw,3rem);line-height:1.04;letter-spacing:-.02em;margin-top:14px;color:var(--green-900)}
+html[dir="rtl"] .sec-head h2{line-height:1.4;font-weight:600}
+.sec-head p{margin-top:14px;font-size:1rem;color:var(--muted);max-width:60ch;line-height:1.7}
+.brief{background:var(--white)}
+.fullbleed{position:relative;height:clamp(340px,64vh,720px);overflow:hidden;background:var(--green-950)}
+.fullbleed img{width:100%;height:100%;object-fit:cover}
+.fullbleed figcaption{position:absolute;left:0;bottom:0;padding:14px 18px;color:var(--cream);font-size:.8rem;background:linear-gradient(to top,rgba(12,24,17,.7),transparent)}
+/* before/after slider */
+.compare{background:var(--cream-2)}
+.ba{position:relative;overflow:hidden;aspect-ratio:16/10;cursor:ew-resize;user-select:none;touch-action:none;background:var(--green-950);box-shadow:0 18px 50px rgba(12,24,17,.18)}
+#ba1{aspect-ratio:16/9}
+.ba .layer{position:absolute;inset:0}
+.ba .layer img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ba .before{clip-path:inset(0 50% 0 0)}
+.ba .lbl{position:absolute;bottom:16px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:rgba(12,24,17,.6);padding:7px 11px;font-weight:600;z-index:4}
+html[dir="rtl"] .ba .lbl{letter-spacing:.03em}
+.ba .lbl.l{left:16px}.ba .lbl.r{right:16px}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--cream);transform:translateX(-50%);z-index:3;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--cream);color:var(--green-900);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.ba .knob svg{width:20px;height:20px}
+.ba .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:var(--sage-soft);background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 22px),var(--green-900);padding:24px}
+.ba .ph svg{width:30px;height:30px;opacity:.8}
+.ba .ph span{font-size:.8rem;max-width:24ch;line-height:1.5}
+.hint{margin-top:14px;font-size:.8rem;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.hint svg{width:16px;height:16px}
+.moves{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.move{border-top:1px solid var(--line);padding-top:12px}
+.move .mn{font-family:var(--font-display);color:var(--accent);font-size:1.1rem}
+.move p{margin-top:6px;font-size:.86rem;color:var(--muted);line-height:1.5}
+/* gallery */
+.gallery{background:var(--white)}
+.grow{display:flex;flex-direction:column;gap:6px}
+.tile{position:relative;overflow:hidden;background:var(--green-950)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.tile:hover img{transform:scale(1.03)}
+.tile.full{height:clamp(340px,60vh,620px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.split .tile{height:clamp(300px,52vh,560px)}
+.cap{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(18px,2.5vw,34px);color:var(--cream);background:linear-gradient(to top,rgba(12,24,17,.8),transparent 55%)}
+.cap p{font-size:.92rem;max-width:46ch}
+.cap .k{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-soft);font-weight:700;margin-bottom:6px}
+html[dir="rtl"] .cap .k{letter-spacing:.04em}
+/* outcome */
+.outcome{background:var(--green-900);color:var(--cream)}
+.outcome .eyebrow{color:var(--sage)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(244,241,231,.16);margin-top:6px}
+.stat{padding:30px 22px 30px 0;border-inline-end:1px solid rgba(244,241,231,.14)}
+.stat:last-child{border-inline-end:none}
+.stat .n{font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1}
+.stat .l{margin-top:10px;font-size:.82rem;color:rgba(244,241,231,.72)}
+.quote{margin-top:clamp(40px,5vw,64px);max-width:44ch}
+.quote p{font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.3;font-style:italic}
+html[dir="rtl"] .quote p{font-style:normal;font-weight:600;line-height:1.5}
+.quote .by{margin-top:16px;font-size:.86rem;color:var(--sage-soft)}
+/* cta */
+.cta{background:var(--cream)}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.cta h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.8rem);color:var(--green-900);max-width:20ch}
+html[dir="rtl"] .cta h2{line-height:1.4;font-weight:600}
+footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem}
+.foot-inner img{height:32px}
+.foot-inner a:hover{color:var(--cream)}
+@media (max-width:900px){
+  .nav-links{display:none}.nav-toggle{display:flex}
+  .moves{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid rgba(244,241,231,.14)}
+  .stat:nth-child(2n){border-inline-end:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand" aria-label="Green Arch home"><img id="navLogo" src="assets/logo-cream.png" alt="Green Arch" /></a>
+    <nav class="nav-links">
+      <a href="index.html#process" data-i18n="nav_process">How we think</a>
+      <a href="index.html#projects" data-i18n="nav_projects">Projects</a>
+      <a href="index.html#about" data-i18n="nav_about">Studio</a>
+      <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle"><span id="langLabel">العربية</span></button>
+      <a href="https://wa.me/966595040782?text=Hi%20Green%20Arch%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="btn" data-i18n="nav_cta">Discuss your project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="bg" src="assets/projects/hospital/hero.jpg" alt="Tree-lined pedestrian spine of the hospital grounds" />
+  <div class="veil"></div>
+  <div class="hero-inner"><div class="wrap">
+    <a href="index.html#projects" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">All projects</span></a>
+    <span class="eyebrow" style="color:var(--sage-soft)" data-i18n="hero_kicker">Government · Landscape · Riyadh</span>
+    <h1 data-i18n="hero_title">Hospital Grounds</h1>
+    <p class="lead" data-i18n="hero_lead">25,000 m² of shaded circulation, courtyard gardens and calm — designed, detailed and delivered for a government hospital.</p>
+    <div class="chips">
+      <span class="chip"><b data-i18n="c_loc">Location</b> · <span data-i18n="c_loc_v">Riyadh</span></span>
+      <span class="chip"><b data-i18n="c_area">Area</b> · 25,000 m²</span>
+      <span class="chip"><b data-i18n="c_scope">Scope</b> · <span data-i18n="c_scope_v">Landscape, concept → handover</span></span>
+      <span class="chip"><b data-i18n="c_sector">Sector</b> · <span data-i18n="c_sector_v">Government</span></span>
+    </div>
+  </div></div>
+</section>
+
+<!-- BRIEF -->
+<section class="brief pad">
+  <div class="wrap sec-head reveal">
+    <span class="eyebrow" data-i18n="brief_eyebrow">The brief</span>
+    <h2 data-i18n="brief_title">A hospital should feel like a garden, not a car park.</h2>
+    <p data-i18n="brief_body">The grounds had to move thousands of patients, families and staff between blocks — in shade, safely and calmly. Our task: turn 25,000 m² of leftover space into a connected landscape of shaded walks, courtyard gardens, a children's play area and a continuous walking loop.</p>
+  </div>
+</section>
+
+<figure class="fullbleed reveal">
+  <img src="assets/projects/hospital/aerial.jpg" alt="Rendered aerial view of the hospital landscape masterplan" loading="lazy" />
+  <figcaption data-i18n="aerial_cap">The scheme from above — landscape threading between the hospital blocks.</figcaption>
+</figure>
+
+<!-- SLIDER 1: drawing -> design -->
+<section class="compare pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="think_eyebrow">The thinking</span>
+      <h2 data-i18n="think_title">From drawing to design.</h2>
+      <p data-i18n="think_body">Every square metre started as a landscape masterplan. Drag the slider to compare the working drawing with the rendered scheme.</p>
+    </div>
+    <div class="ba reveal" id="ba1">
+      <div class="layer after"><img src="assets/projects/hospital/aerial.jpg" alt="Rendered masterplan" /></div>
+      <div class="layer before"><img src="assets/projects/hospital/plan.jpg" alt="Landscape masterplan drawing" /></div>
+      <span class="lbl l" data-i18n="lbl_drawing">Masterplan drawing</span>
+      <span class="lbl r" data-i18n="lbl_render">Rendered design</span>
+      <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+    </div>
+    <div class="hint reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg><span data-i18n="drag_hint">Drag to compare</span></div>
+    <div class="moves reveal">
+      <div class="move"><div class="mn">01</div><p data-i18n="move1">A shaded pedestrian spine linking every block.</p></div>
+      <div class="move"><div class="mn">02</div><p data-i18n="move2">Courtyard gardens as green rest nodes.</p></div>
+      <div class="move"><div class="mn">03</div><p data-i18n="move3">A children's play area and seating courts.</p></div>
+      <div class="move"><div class="mn">04</div><p data-i18n="move4">A continuous walking &amp; running loop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN GALLERY -->
+<section class="gallery pad">
+  <div class="wrap sec-head reveal">
+    <span class="eyebrow" data-i18n="design_eyebrow">The design</span>
+    <h2 data-i18n="design_title">How it was meant to feel.</h2>
+  </div>
+  <div class="grow reveal">
+    <div class="tile full"><img src="assets/projects/hospital/promenade.jpg" alt="Shaded tree-lined promenade with benches" loading="lazy" />
+      <div class="cap"><p><span class="k" data-i18n="g1_k">The spine</span><span data-i18n="g1">A continuous, planted walk between blocks — shade every step of the way.</span></p></div></div>
+    <div class="split">
+      <div class="tile"><img src="assets/projects/hospital/plaza.jpg" alt="Courtyard garden with bougainvillea and fountain" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="g2_k">Courtyard garden</span><span data-i18n="g2">Bougainvillea, seating and a fountain — a place to breathe.</span></p></div></div>
+      <div class="tile"><img src="assets/projects/hospital/courtyard.jpg" alt="Aerial of a shaded rest node" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="g3_k">Rest nodes</span><span data-i18n="g3">Shaded, green pockets sized for families waiting.</span></p></div></div>
+    </div>
+    <div class="tile full"><img src="assets/projects/hospital/spine.jpg" alt="Top-down view of the tree-lined promenade" loading="lazy" />
+      <div class="cap"><p><span class="k" data-i18n="g4_k">From above</span><span data-i18n="g4">The promenade's rhythm of trees, light and seating.</span></p></div></div>
+  </div>
+</section>
+
+<!-- SLIDER 2: designed -> built -->
+<section class="compare pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="built_eyebrow">Designed, then delivered</span>
+      <h2 data-i18n="built_title">We build what we draw.</h2>
+      <p data-i18n="built_body">Drag to compare the design with the built result. Drop your on-site photos into the built slots and this becomes the proof.</p>
+    </div>
+    <div class="ba reveal" id="ba2">
+      <div class="layer after"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span data-i18n="built_slot">Built · add your on-site photo<br>assets/projects/hospital/built-1.jpg</span></div></div>
+      <div class="layer before"><img src="assets/projects/hospital/plaza.jpg" alt="Design render of the courtyard garden" /></div>
+      <span class="lbl l" data-i18n="lbl_design">Design</span>
+      <span class="lbl r" data-i18n="lbl_built">Built on site</span>
+      <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+    </div>
+    <div class="hint reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg><span data-i18n="drag_hint2">Drag to compare</span></div>
+  </div>
+</section>
+
+<!-- OUTCOME -->
+<section class="outcome pad grunge">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:none;margin-bottom:24px">
+      <span class="eyebrow" data-i18n="out_eyebrow">The outcome</span>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">25,000<span style="font-size:.5em"> m²</span></div><div class="l" data-i18n="s1">Landscaped grounds delivered</div></div>
+      <div class="stat"><div class="n">1</div><div class="l" data-i18n="s2">Continuous shaded spine linking all blocks</div></div>
+      <div class="stat"><div class="n">4+</div><div class="l" data-i18n="s3">Courtyard gardens &amp; rest nodes</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l" data-i18n="s4">Native, low-water planting palette</div></div>
+    </div>
+    <div class="quote reveal">
+      <p data-i18n="quote">"A hospital's landscape is part of the treatment — shade, greenery and a calm place to walk."</p>
+      <div class="by" data-i18n="quote_by">Belal Shaath · Founder &amp; Principal Architect</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta pad">
+  <div class="wrap cta-in reveal">
+    <h2 data-i18n="cta_title">Have grounds like these?</h2>
+    <a href="https://wa.me/966595040782?text=Hi%20Green%20Arch%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="btn" data-i18n="cta_btn">Discuss your project
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <a href="index.html"><img src="assets/logo-cream.png" alt="Green Arch" /></a>
+    <a href="index.html#projects" data-i18n="foot_back">← All projects</a>
+    <span data-i18n="foot_copy">© 2026 Green Arch · Architecture from brief to building</span>
+  </div>
+</footer>
+
+<script>
+const I18N={ar:{
+  nav_process:"كيف نفكر",nav_projects:"المشاريع",nav_about:"الاستوديو",nav_contact:"تواصل معنا",nav_cta:"لنناقش مشروعك",
+  back:"كل المشاريع",
+  hero_kicker:"حكومي · تنسيق مواقع · الرياض",hero_title:"حديقة المستشفى",
+  hero_lead:"٢٥٬٠٠٠ م² من الممرات المظللة والأفنية الخضراء والهدوء — مصمّمة ومُفصّلة ومُنفَّذة لمستشفى حكومي.",
+  c_loc:"الموقع",c_loc_v:"الرياض",c_area:"المساحة",c_scope:"النطاق",c_scope_v:"تنسيق، من الفكرة إلى التسليم",c_sector:"القطاع",c_sector_v:"حكومي",
+  brief_eyebrow:"الموجز",brief_title:"المستشفى يجب أن يكون حديقة، لا موقف سيارات.",
+  brief_body:"كان على الموقع أن ينقل آلاف المرضى والعائلات والموظفين بين المباني — في ظلٍّ وأمانٍ وهدوء. مهمتنا: تحويل ٢٥٬٠٠٠ م² من المساحات المتبقية إلى منظرٍ متصل من الممرات المظللة والأفنية الخضراء ومنطقة ألعاب للأطفال ومسار مشيٍ متواصل.",
+  aerial_cap:"المشروع من الأعلى — التنسيق يتخلّل مباني المستشفى.",
+  think_eyebrow:"التفكير",think_title:"من الرسم إلى التصميم.",
+  think_body:"بدأ كل متر مربع كمخطط تنسيق للموقع. اسحب الشريط لمقارنة المخطط التنفيذي بالتصميم المُصوَّر.",
+  lbl_drawing:"مخطط الموقع",lbl_render:"التصميم المُصوَّر",drag_hint:"اسحب للمقارنة",drag_hint2:"اسحب للمقارنة",
+  move1:"ممر مشاة مظلل يربط كل المباني.",move2:"أفنية خضراء كنقاط راحة.",move3:"منطقة ألعاب للأطفال وجلسات.",move4:"مسار متواصل للمشي والجري.",
+  design_eyebrow:"التصميم",design_title:"كيف صُمّم ليكون الإحساس.",
+  g1_k:"الممر",g1:"ممرٌ مزروع ومتواصل بين المباني — ظلٌّ في كل خطوة.",
+  g2_k:"فناء أخضر",g2:"جهنمية وجلسات ونافورة — مكانٌ للتنفّس.",
+  g3_k:"نقاط راحة",g3:"جيوب خضراء مظللة بمقاس العائلات المنتظرة.",
+  g4_k:"من الأعلى",g4:"إيقاع الأشجار والضوء والجلسات على طول الممر.",
+  built_eyebrow:"صُمّم، ثم نُفِّذ",built_title:"ننفّذ ما نرسمه.",
+  built_body:"اسحب لمقارنة التصميم بالنتيجة المبنية. أضِف صور الموقع الحقيقية في الأماكن المخصصة ليصبح هذا هو الدليل.",
+  built_slot:"مبني · أضِف صورتك من الموقع<br>assets/projects/hospital/built-1.jpg",
+  lbl_design:"التصميم",lbl_built:"مبني في الموقع",
+  out_eyebrow:"النتيجة",
+  s1:"مسطّح تنسيق تم تسليمه",s2:"ممر مظلل متواصل يربط كل المباني",s3:"أفنية ونقاط راحة خضراء",s4:"نباتات محلية قليلة الري",
+  quote:"«تنسيق المستشفى جزء من العلاج — ظلٌّ وخُضرة ومكانٌ هادئ للمشي.»",
+  quote_by:"بلال شعث · المؤسس والمعماري الرئيسي",
+  cta_title:"لديك موقع مثل هذا؟",cta_btn:"لنناقش مشروعك",
+  foot_back:"→ كل المشاريع",foot_copy:"© ٢٠٢٦ جرين ارك · عمارة من الفكرة إلى المبنى"
+}};
+const EN={};
+document.querySelectorAll("[data-i18n]").forEach(el=>EN[el.getAttribute("data-i18n")]=el.innerHTML);
+const nav=document.getElementById("nav"),navLogo=document.getElementById("navLogo"),hero=document.querySelector(".hero");
+function refreshLogo(){navLogo.src=!nav.classList.contains("scrolled")?"assets/logo-cream.png":(document.documentElement.lang==="ar"?"assets/logo-green-ar.png":"assets/logo-green.png");}
+function applyLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";
+  const pick=k=>l==="ar"?(I18N.ar[k]??EN[k]):EN[k];
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=pick(el.getAttribute("data-i18n"));if(v!=null)el.innerHTML=v;});
+  document.getElementById("langLabel").textContent=l==="ar"?"EN":"العربية";refreshLogo();localStorage.setItem("ga_lang",l);}
+if((localStorage.getItem("ga_lang")||"en")==="ar")applyLang("ar");
+document.getElementById("langToggle").addEventListener("click",()=>applyLang(document.documentElement.lang==="ar"?"en":"ar"));
+function onScroll(){nav.classList.toggle("scrolled",scrollY>(hero.offsetHeight-110));refreshLogo();}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.1,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+function initBA(el){const before=el.querySelector(".before"),handle=el.querySelector(".handle");let drag=false;
+  const set=x=>{const r=el.getBoundingClientRect();let p=(x-r.left)/r.width*100;p=Math.max(2,Math.min(98,p));before.style.clipPath="inset(0 "+(100-p)+"% 0 0)";handle.style.left=p+"%";};
+  el.addEventListener("pointerdown",e=>{drag=true;el.setPointerCapture(e.pointerId);set(e.clientX);});
+  el.addEventListener("pointermove",e=>{if(drag)set(e.clientX);});
+  el.addEventListener("pointerup",()=>drag=false);el.addEventListener("pointercancel",()=>drag=false);}
+document.querySelectorAll(".ba").forEach(initBA);
+</script>
+</body>
+</html>
