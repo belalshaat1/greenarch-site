@@ -221,6 +221,8 @@ html[dir="rtl"] .step .s-tag{letter-spacing:.02em}
 }
 .p-kicker{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-soft);font-weight:700}
 html[dir="rtl"] .p-kicker{letter-spacing:.04em}
+.p-kicker-lg{font-size:.92rem;letter-spacing:.1em}
+html[dir="rtl"] .p-kicker-lg{letter-spacing:.03em}
 .prow h3{font-family:var(--font-display);font-weight:500;font-size:clamp(1.4rem,2.4vw,2.1rem);margin-top:9px;letter-spacing:-.01em}
 html[dir="rtl"] .prow h3{font-weight:600}
 .prow p{font-size:.86rem;color:rgba(244,241,231,.85);margin-top:8px;max-width:52ch}
@@ -486,26 +488,15 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:38px 0}
         <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
-    <div class="prow-split">
-      <a class="prow" href="majlis1.html">
-        <img src="assets/projects/majlis1/hero.jpg" alt="Salmani-style majlis interior" loading="lazy" />
-        <div class="p-overlay">
-          <span class="p-kicker" data-i18n="m1_k">Interior Design · Salmani majlis</span>
-          <h3 data-i18n="m1_t">Salmani Majlis</h3>
-          <p data-i18n="m1_b">A reception and majlis of layered textiles and Najdi craft.</p>
-          <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="prow" href="majlis2.html">
-        <img src="assets/projects/majlis2/hero.jpg" alt="Salmani-style interior details" loading="lazy" />
-        <div class="p-overlay">
-          <span class="p-kicker" data-i18n="m2_k">Interior Design · Details</span>
-          <h3 data-i18n="m2_t">Najdi Details</h3>
-          <p data-i18n="m2_b">Entry, kitchen and the crafted details of a Salmani home.</p>
-          <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-    </div>
+    <a class="prow full" href="interior-design.html">
+      <img src="assets/projects/majlis1/hero.jpg" alt="Interior design projects by Green Arch" loading="lazy" />
+      <div class="p-overlay">
+        <span class="p-kicker p-kicker-lg" data-i18n="id_k">Interior Design</span>
+        <h3 data-i18n="id_t">Interior Design</h3>
+        <p data-i18n="id_b">Majlis interiors and the crafted details behind them — browse the full collection.</p>
+        <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -606,8 +597,7 @@ const I18N = {
     n13_k:"سكني · فيلا عصرية", n13_t:"فيلا عايلي", n13_b:"فيلا عصرية بفناء من الخشب والحجر — تصميمًا وتنفيذًا.",
     sal_k:"سكني · طراز سلماني", sal_t:"مسكن بالطراز السلماني", sal_b:"واجهات مقوّسة وفناء بنافورة، متجذّرة في العمارة النجدية.",
     n11_k:"سكني · فيلا بمسبح", n11_t:"شاليه ترفيهي", n11_b:"فيلا من طابق واحد حول فناء مسبح خاص — من التصوّر إلى الواقع.",
-    m1_k:"تصميم داخلي · مجلس سلماني", m1_t:"مجلس بالطراز السلماني", m1_b:"مجلس واستقبال بأقمشة متداخلة وحرفة نجدية.",
-    m2_k:"تصميم داخلي · تفاصيل", m2_t:"تفاصيل نجدية", m2_b:"المدخل والمطبخ وتفاصيل بيتٍ سلماني.",
+    id_k:"تصميم داخلي", id_t:"تصميم داخلي", id_b:"تصاميم داخلية لمجالس ومنازل سلمانية بتفاصيلها الدقيقة — تصفّح المجموعة الكاملة.",
     c_wa_k:"واتساب",
     p1_kicker:"سكني · مجتمع نجدي", p1_title:"مجمع سكني بالطراز النجدي",
     p1_body:"مجموعة منازل مسوّرة بمواقف مظللة وممر مشترك، مُفصّلة بالطراز النجدي.", p1_m1:"الرياض", p1_m2:"وحدات متعددة",
