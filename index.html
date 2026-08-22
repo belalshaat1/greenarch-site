@@ -124,7 +124,10 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 
 /* ============ HERO (full-bleed) ============ */
 .hero{position:relative;min-height:96vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--cream)}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-slides{position:absolute;inset:0}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:0;transition:opacity 1.6s ease}
+.hero-img.is-active{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero-img{transition:none}}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,17,.32) 0%,rgba(12,24,17,.05) 34%,rgba(12,24,17,.72) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:clamp(38px,6vh,72px)}
 .hero h1{
@@ -142,7 +145,8 @@ html[dir="rtl"] .hero h1 em{font-style:normal;color:var(--sage-soft)}
 /* ============ STATS STRIP (white) ============ */
 .stats{background:var(--white)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:clamp(30px,4vw,56px) clamp(16px,2vw,34px);border-inline-end:1px solid var(--line)}
+.stat{display:block;padding:clamp(30px,4vw,56px) clamp(16px,2vw,34px);border-inline-end:1px solid var(--line);text-decoration:none;color:inherit;transition:background .2s}
+.stat:hover{background:var(--cream-2)}
 .stat:last-child{border-inline-end:none}
 .stat .n{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.1rem);color:var(--green-800);line-height:1;letter-spacing:-.02em}
 .stat .l{margin-top:10px;font-size:.78rem;color:var(--muted);max-width:22ch}
@@ -362,7 +366,12 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:38px 0}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <img class="hero-img" src="assets/hero.jpg" alt="Palm-lined courtyard approach to a lit water feature, by Green Arch" />
+  <div class="hero-slides">
+    <img class="hero-img is-active" src="assets/projects/hospital/hero.jpg" alt="Government and institutional projects by Green Arch" />
+    <img class="hero-img" src="assets/projects/nahr13/hero.jpg" alt="Residential villa facades by Green Arch" />
+    <img class="hero-img" src="assets/projects/nahr11/hero.jpg" alt="Chalets and resthouses by Green Arch" />
+    <img class="hero-img" src="assets/projects/majlis1/hero.jpg" alt="Interior design by Green Arch" />
+  </div>
   <div class="hero-veil"></div>
   <div class="hero-inner">
     <div class="wrap">
@@ -383,10 +392,10 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:38px 0}
 <section class="stats">
   <div class="wrap">
     <div class="stats-grid">
-      <div class="stat"><div class="n">25,000<span style="font-size:.5em"> m²</span></div><div class="l" data-i18n="stat1">Hospital landscape delivered</div></div>
-      <div class="stat"><div class="n">03</div><div class="l" data-i18n="stat2">Sectors: commercial, government, residential</div></div>
-      <div class="stat"><div class="n">05</div><div class="l" data-i18n="stat3">Stages, brief to building</div></div>
-      <div class="stat"><div class="n">100%</div><div class="l" data-i18n="stat4">Saudi-code compliant delivery</div></div>
+      <a class="stat" href="interior-design.html"><div class="n">17</div><div class="l" data-i18n="stat1">Interior design projects</div></a>
+      <a class="stat" href="chalets.html"><div class="n">14</div><div class="l" data-i18n="stat2">Chalet &amp; resthouse projects</div></a>
+      <a class="stat" href="villas.html"><div class="n">13</div><div class="l" data-i18n="stat3">Residential villa facade projects</div></a>
+      <a class="stat" href="government.html"><div class="n">25,000<span style="font-size:.5em"> m²</span></div><div class="l" data-i18n="stat4">Hospital landscape delivered</div></a>
     </div>
   </div>
 </section>
@@ -449,42 +458,30 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:38px 0}
   </div>
 
   <div class="proj-rows reveal">
-    <a class="prow full" href="hospital.html">
-      <img src="assets/projects/hospital/hero.jpg" alt="Government hospital landscape — tree-lined promenade" loading="lazy" />
+    <a class="prow full" href="government.html">
+      <img src="assets/projects/hospital/hero.jpg" alt="Government and institutional projects by Green Arch" loading="lazy" />
       <div class="p-overlay">
-        <span class="p-kicker" data-i18n="hp_kicker">Government · Landscape</span>
-        <h3 data-i18n="hp_title">Hospital Grounds</h3>
-        <p data-i18n="hp_body">25,000 m² of shaded circulation, courtyard gardens and a walking loop — masterplan to delivery.</p>
-        <div class="p-meta"><span data-i18n="hp_m1">Riyadh</span><span data-i18n="hp_m2">25,000 m²</span></div>
+        <span class="p-kicker p-kicker-lg" data-i18n="cat_gov_k">Government</span>
+        <h3 data-i18n="cat_gov_t">Government</h3>
+        <p data-i18n="cat_gov_b">Public and institutional landscapes and buildings, delivered to Saudi code.</p>
         <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
-    <div class="prow-split">
-      <a class="prow" href="nahr13.html">
-        <img src="assets/projects/nahr13/hero.jpg" alt="Nahr 13 modern villa" loading="lazy" />
-        <div class="p-overlay">
-          <span class="p-kicker" data-i18n="n13_k">Residential · Modern villa</span>
-          <h3 data-i18n="n13_t">Family Villa</h3>
-          <p data-i18n="n13_b">A modern villa with a wood-and-stone courtyard — design to build.</p>
-          <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="prow" href="salmani.html">
-        <img src="assets/projects/salmani/hero.jpg" alt="Salmani-style residence" loading="lazy" />
-        <div class="p-overlay">
-          <span class="p-kicker" data-i18n="sal_k">Residential · Salmani style</span>
-          <h3 data-i18n="sal_t">Salmani-Style Residence</h3>
-          <p data-i18n="sal_b">Arched façades and a fountain courtyard, rooted in Najdi tradition.</p>
-          <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-    </div>
-    <a class="prow full" href="nahr11.html">
-      <img src="assets/projects/nahr11/hero.jpg" alt="Nahr 11 villa with pool" loading="lazy" />
+    <a class="prow full" href="villas.html">
+      <img src="assets/projects/nahr13/hero.jpg" alt="Residential villa facade projects by Green Arch" loading="lazy" />
       <div class="p-overlay">
-        <span class="p-kicker" data-i18n="n11_k">Residential · Villa with pool</span>
-        <h3 data-i18n="n11_t">Leisure Chalet</h3>
-        <p data-i18n="n11_b">A single-storey villa around a private pool courtyard — render to reality.</p>
+        <span class="p-kicker p-kicker-lg" data-i18n="cat_villa_k">Residential Villa Facades</span>
+        <h3 data-i18n="cat_villa_t">Residential Villa Facades</h3>
+        <p data-i18n="cat_villa_b">Modern and Salmani-style villa exteriors, from concept to build.</p>
+        <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="prow full" href="chalets.html">
+      <img src="assets/banner.jpg" alt="Chalet and resthouse projects by Green Arch" loading="lazy" />
+      <div class="p-overlay">
+        <span class="p-kicker p-kicker-lg" data-i18n="cat_chalet_k">Chalets &amp; Resthouses</span>
+        <h3 data-i18n="cat_chalet_t">Chalets &amp; Resthouses</h3>
+        <p data-i18n="cat_chalet_b">Leisure retreats and family resthouses designed for gathering.</p>
         <span class="p-view"><span data-i18n="hp_view">View project</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
@@ -572,8 +569,8 @@ const I18N = {
     hero_title:"نصمم <em>وننفذ على أرض الواقع.</em>",
     hero_lead:"ممارسة معمارية مستقلة تشارك المطوّرين العقاريين في أنحاء المملكة — من أول فكرة حتى التسليم النهائي.",
     hero_cta1:"ابدأ مشروعًا", hero_cta2:"شاهد طريقة عملنا",
-    stat1:"مسطّح تنسيق لمستشفى تم تسليمه", stat2:"قطاعات: تجاري، حكومي، سكني",
-    stat3:"مراحل، من الفكرة إلى المبنى", stat4:"تنفيذ مطابق للكود السعودي",
+    stat1:"مشاريع تصميم داخلي", stat2:"مشاريع شاليهات واستراحات",
+    stat3:"مشاريع واجهات فلل سكنية", stat4:"مشروع حكومي",
     marquee:"الموجز والمفهوم <span class='dot'>✦</span> التصميم والتصوّر <span class='dot'>✦</span> التوريد والتكلفة <span class='dot'>✦</span> التنفيذ والإشراف <span class='dot'>✦</span> التشطيب والتسليم <span class='dot'>✦</span> ",
     sectors_eyebrow:"ماذا نقدّم",
     sectors_title:"استوديو واحد، مسؤول من البداية إلى النهاية — في المشاريع التي يبنيها المطوّرون فعلًا.",
@@ -592,11 +589,10 @@ const I18N = {
     projects_eyebrow:"أعمال مختارة",
     projects_title:"مشاريع تقرأ الأرض قبل أن تشكّلها.",
     projects_sub:"أعمال سكنية وتنسيقية ومختلطة الاستخدام حديثة في أنحاء المملكة.",
-    hp_kicker:"حكومي · تنسيق مواقع", hp_title:"حديقة المستشفى",
-    hp_body:"٢٥٬٠٠٠ م² من الممرات المظللة والأفنية ومسار مشي — من المخطط إلى التسليم.", hp_m1:"الرياض", hp_m2:"٢٥٬٠٠٠ م²", hp_view:"عرض المشروع",
-    n13_k:"سكني · فيلا عصرية", n13_t:"فيلا عايلي", n13_b:"فيلا عصرية بفناء من الخشب والحجر — تصميمًا وتنفيذًا.",
-    sal_k:"سكني · طراز سلماني", sal_t:"مسكن بالطراز السلماني", sal_b:"واجهات مقوّسة وفناء بنافورة، متجذّرة في العمارة النجدية.",
-    n11_k:"سكني · فيلا بمسبح", n11_t:"شاليه ترفيهي", n11_b:"فيلا من طابق واحد حول فناء مسبح خاص — من التصوّر إلى الواقع.",
+    hp_view:"عرض المشروع",
+    cat_gov_k:"حكومي", cat_gov_t:"حكومي", cat_gov_b:"مشاريع ومساحات حكومية ومؤسسية، بمعايير الكود السعودي.",
+    cat_villa_k:"تصميم واجهات فلل سكنية", cat_villa_t:"تصميم واجهات فلل سكنية", cat_villa_b:"واجهات فلل حديثة وبالطراز السلماني، من الفكرة إلى التنفيذ.",
+    cat_chalet_k:"الشاليهات والاستراحات", cat_chalet_t:"الشاليهات والاستراحات", cat_chalet_b:"استراحات ومنتجعات عائلية مصمّمة للتجمّع والراحة.",
     id_k:"تصميم داخلي", id_t:"تصميم داخلي", id_b:"تصاميم داخلية لمجالس ومنازل سلمانية بتفاصيلها الدقيقة — تصفّح المجموعة الكاملة.",
     c_wa_k:"واتساب",
     p1_kicker:"سكني · مجتمع نجدي", p1_title:"مجمع سكني بالطراز النجدي",
@@ -661,6 +657,16 @@ navLinks.querySelectorAll("a").forEach(a=> a.addEventListener("click",()=> navLi
 
 const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }); },{threshold:.1, rootMargin:"0px 0px -5% 0px"});
 document.querySelectorAll(".reveal").forEach(el=> io.observe(el));
+
+const heroSlides = document.querySelectorAll(".hero-img");
+if(heroSlides.length > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+  let heroIdx = 0;
+  setInterval(()=>{
+    heroSlides[heroIdx].classList.remove("is-active");
+    heroIdx = (heroIdx + 1) % heroSlides.length;
+    heroSlides[heroIdx].classList.add("is-active");
+  }, 4500);
+}
 </script>
 </body>
 </html>
