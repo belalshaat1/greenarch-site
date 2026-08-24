@@ -51,7 +51,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
 /* hero */
 .hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--cream)}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center 38%}
 .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,17,.35),rgba(12,24,17,.05) 34%,rgba(12,24,17,.78) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:clamp(34px,6vh,64px)}
 .back{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:var(--sage-soft);margin-bottom:16px}
@@ -73,7 +73,7 @@ html[dir="rtl"] .sec-head h2{line-height:1.4;font-weight:600}
 .gallery{background:var(--white)}
 .grow{display:flex;flex-direction:column;gap:6px}
 .tile{position:relative;overflow:hidden;background:var(--green-950)}
-.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.tile img{width:100%;height:100%;object-fit:contain;transition:transform .9s var(--ease)}
 .tile:hover img{transform:scale(1.03)}
 .tile.full{height:clamp(340px,60vh,620px)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:6px}
@@ -103,13 +103,13 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
 <meta property="og:title" content="Istirahat Jubaila — Resthouse | Green Arch" />
 <meta property="og:description" content="Istirahat Jubaila resthouse design in Riyadh by Green Arch — a palm-lined arrival walkway and courtyard lounges built for gathering." />
 <meta property="og:url" content="https://greenarchdesign.online/jubaila.html" />
-<meta property="og:image" content="https://greenarchdesign.online/assets/projects/jubaila/hero.jpg" />
+<meta property="og:image" content="https://greenarchdesign.online/assets/projects/jubaila/facade-day.jpg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="ar_SA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Istirahat Jubaila — Resthouse | Green Arch" />
 <meta name="twitter:description" content="Istirahat Jubaila resthouse design in Riyadh by Green Arch — a palm-lined arrival walkway and courtyard lounges built for gathering." />
-<meta name="twitter:image" content="https://greenarchdesign.online/assets/projects/jubaila/hero.jpg" />
+<meta name="twitter:image" content="https://greenarchdesign.online/assets/projects/jubaila/facade-day.jpg" />
 <meta name="theme-color" content="#1C3627" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon" href="/favicon.png" />
@@ -130,7 +130,7 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
 
 <a id="top"></a>
 <section class="hero">
-<img class="bg" src="assets/projects/jubaila/hero.jpg" alt="" />
+<img class="bg" src="assets/projects/jubaila/facade-day.jpg" alt="" />
 <div class="veil"></div>
 <div class="hero-inner"><div class="wrap">
 <a href="chalets.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">All projects</span></a>
@@ -146,10 +146,18 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
 <p data-i18n="brief_b">A resthouse compound needed an arrival sequence as memorable as its lounges — a palm-lined walkway between stone-clad units leads to courtyards built around the fire pit and the pool.</p></div></section>
 
 <section class="gallery pad">
-<div class="wrap sec-head reveal"><span class="eyebrow" data-i18n="g_e">The design</span><h2 data-i18n="g_t">Palm, stone and firelight.</h2></div>
+<div class="wrap sec-head reveal"><span class="eyebrow" data-i18n="gf_e">The facade</span><h2 data-i18n="gf_t">Arriving from the street.</h2></div>
+<div class="grow reveal">
+<div class="split"><div class="tile"><img src="assets/projects/jubaila/facade-day.jpg" alt="Street-facing gate by day, framed by palms" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="gf0k">By day</span><span data-i18n="gf0">The street-facing gate, framed by palms.</span></p></div></div><div class="tile"><img src="assets/projects/jubaila/facade-night.jpg" alt="The gate wall lit after dark" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="gf1k">By night</span><span data-i18n="gf1">The gate wall, lit after dark.</span></p></div></div></div>
+</div>
+<div class="wrap sec-head reveal" style="margin-top:clamp(48px,6vw,88px)"><span class="eyebrow" data-i18n="g_e">The walkway</span><h2 data-i18n="g_t">Palm, stone and firelight.</h2></div>
 <div class="grow reveal">
 <div class="tile full"><img src="assets/projects/jubaila/hero.jpg" alt="" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="g0k">The arrival</span><span data-i18n="g0">A palm-lined walkway leads guests between the units.</span></p></div></div>
-<div class="split"><div class="tile"><img src="assets/projects/jubaila/g1.jpg" alt="" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="g1k">The courtyard</span><span data-i18n="g1">A fire-pit lounge, framed by palms and planted screens.</span></p></div></div><div class="tile"><img src="assets/projects/jubaila/g2.jpg" alt="" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="g2k">Between the units</span><span data-i18n="g2">Palm-lined paths connect the resthouse's private entries.</span></p></div></div></div>
+<div class="split"><div class="tile"><img src="assets/projects/jubaila/walkway-night.jpg" alt="The arrival walkway lit for the evening" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="gw1k">After dark</span><span data-i18n="gw1">The same walkway, lit for the evening.</span></p></div></div><div class="tile"><img src="assets/projects/jubaila/g2.jpg" alt="" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="g2k">Between the units</span><span data-i18n="g2">Palm-lined paths connect the resthouse's private entries.</span></p></div></div></div>
+</div>
+<div class="wrap sec-head reveal" style="margin-top:clamp(48px,6vw,88px)"><span class="eyebrow" data-i18n="gl_e">The landscape</span><h2 data-i18n="gl_t">Where the compound gathers.</h2></div>
+<div class="grow reveal">
+<div class="split"><div class="tile"><img src="assets/projects/jubaila/g1.jpg" alt="" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="g1k">The courtyard</span><span data-i18n="g1">A fire-pit lounge, framed by palms and planted screens.</span></p></div></div><div class="tile"><img src="assets/projects/jubaila/landscape-day.jpg" alt="The compound's units and gardens seen together" loading="lazy" /><div class="cap"><p><span class="k" data-i18n="gl1k">The grounds</span><span data-i18n="gl1">The compound's units and gardens, seen together.</span></p></div></div></div>
 </div></section>
 
 <section class="cta pad"><div class="wrap cta-in reveal">
@@ -162,7 +170,7 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
 <span data-i18n="foot_copy">© 2026 Green Arch · Architecture from brief to building</span></div></footer>
 
 <script>
-const I18N={ar: {"nav_process": "كيف نفكر", "nav_projects": "المشاريع", "nav_about": "الاستوديو", "nav_contact": "تواصل معنا", "nav_cta": "لنناقش مشروعك", "back": "كل المشاريع", "cta_btn": "راسلنا على واتساب", "foot_back": "→ كل المشاريع", "foot_copy": "© ٢٠٢٦ جرين ارك · عمارة من الفكرة إلى المبنى", "kicker": "ترفيهي · استراحة", "title": "استراحة جبيلة", "lead": "ممرّ وصول مصفوف بالنخيل يقود لأفنية مجالس حول النار والمسبح — استراحة صُمّمت للتجمّع.", "chip0k": "النوع", "chip0v": "استراحة", "chip1k": "التركيز", "chip1v": "المدخل والفناء", "chip2k": "الطراز", "chip2v": "عصري", "chip3k": "الموقع", "chip3v": "الرياض", "brief_e": "الموجز", "brief_t": "مدخلٌ يستحق المشي فيه.", "brief_b": "مجمّع استراحات احتاج تسلسل وصول لا يقل تميّزًا عن مجالسه — ممرّ مصفوف بالنخيل بين وحدات مكسوّة بالحجر يقود لأفنية حول موقد النار والمسبح.", "g_e": "التصميم", "g_t": "نخيلٌ وحجرٌ وضوء نار.", "g0k": "المدخل", "g0": "ممرّ مصفوف بالنخيل يقود الضيوف بين الوحدات.", "g1k": "الفناء", "g1": "مجلس حول موقد نار، يؤطّره النخيل والحواجز المزروعة.", "g2k": "بين الوحدات", "g2": "ممرات مصفوفة بالنخيل تربط المداخل الخاصة للاستراحة.", "cta_t": "تخطط لاستراحة؟"}};
+const I18N={ar: {"nav_process": "كيف نفكر", "nav_projects": "المشاريع", "nav_about": "الاستوديو", "nav_contact": "تواصل معنا", "nav_cta": "لنناقش مشروعك", "back": "كل المشاريع", "cta_btn": "راسلنا على واتساب", "foot_back": "→ كل المشاريع", "foot_copy": "© ٢٠٢٦ جرين ارك · عمارة من الفكرة إلى المبنى", "kicker": "ترفيهي · استراحة", "title": "استراحة جبيلة", "lead": "ممرّ وصول مصفوف بالنخيل يقود لأفنية مجالس حول النار والمسبح — استراحة صُمّمت للتجمّع.", "chip0k": "النوع", "chip0v": "استراحة", "chip1k": "التركيز", "chip1v": "المدخل والفناء", "chip2k": "الطراز", "chip2v": "عصري", "chip3k": "الموقع", "chip3v": "الرياض", "brief_e": "الموجز", "brief_t": "مدخلٌ يستحق المشي فيه.", "brief_b": "مجمّع استراحات احتاج تسلسل وصول لا يقل تميّزًا عن مجالسه — ممرّ مصفوف بالنخيل بين وحدات مكسوّة بالحجر يقود لأفنية حول موقد النار والمسبح.", "gf_e": "الواجهة", "gf_t": "الوصول من الشارع.", "gf0k": "نهارًا", "gf0": "بوابة الواجهة على الشارع، يؤطّرها النخيل.", "gf1k": "ليلاً", "gf1": "جدار البوابة، مضاءً بعد الغروب.", "g_e": "الممر", "g_t": "نخيلٌ وحجرٌ وضوء نار.", "g0k": "المدخل", "g0": "ممرّ مصفوف بالنخيل يقود الضيوف بين الوحدات.", "gw1k": "بعد الغروب", "gw1": "نفس الممر، مضاءً للمساء.", "g2k": "بين الوحدات", "g2": "ممرات مصفوفة بالنخيل تربط المداخل الخاصة للاستراحة.", "gl_e": "اللاند سكيب", "gl_t": "حيث يجتمع المجمع.", "g1k": "الفناء", "g1": "مجلس حول موقد نار، يؤطّره النخيل والحواجز المزروعة.", "gl1k": "الموقع", "gl1": "وحدات المجمع وحدائقه، معًا.", "cta_t": "تخطط لاستراحة؟"}};
 const EN={};
 document.querySelectorAll("[data-i18n]").forEach(el=>EN[el.getAttribute("data-i18n")]=el.innerHTML);
 const nav=document.getElementById("nav"),navLogo=document.getElementById("navLogo"),hero=document.querySelector(".hero");

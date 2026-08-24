@@ -55,7 +55,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .nav-toggle span::before{top:-5px}.nav-toggle span::after{top:5px}
 /* hero */
 .hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden;color:var(--cream)}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center 45%}
 .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,17,.35),rgba(12,24,17,.05) 34%,rgba(12,24,17,.78) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:clamp(34px,6vh,64px)}
 .back{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:600;color:var(--sage-soft);margin-bottom:16px}
@@ -74,14 +74,14 @@ html[dir="rtl"] .sec-head h2{line-height:1.4;font-weight:600}
 .sec-head p{margin-top:14px;font-size:1rem;color:var(--muted);max-width:60ch;line-height:1.7}
 .brief{background:var(--white)}
 .fullbleed{position:relative;height:clamp(340px,64vh,720px);overflow:hidden;background:var(--green-950)}
-.fullbleed img{width:100%;height:100%;object-fit:cover}
+.fullbleed img{width:100%;height:100%;object-fit:contain}
 .fullbleed figcaption{position:absolute;left:0;bottom:0;padding:14px 18px;color:var(--cream);font-size:.8rem;background:linear-gradient(to top,rgba(12,24,17,.7),transparent)}
 /* before/after slider */
 .compare{background:var(--cream-2)}
 .ba{position:relative;overflow:hidden;aspect-ratio:16/10;cursor:ew-resize;user-select:none;touch-action:none;background:var(--green-950);box-shadow:0 18px 50px rgba(12,24,17,.18)}
 #ba1{aspect-ratio:16/9}
 .ba .layer{position:absolute;inset:0}
-.ba .layer img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ba .layer img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
 .ba .before{clip-path:inset(0 50% 0 0)}
 .ba .lbl{position:absolute;bottom:16px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:rgba(12,24,17,.6);padding:7px 11px;font-weight:600;z-index:4}
 html[dir="rtl"] .ba .lbl{letter-spacing:.03em}
@@ -102,7 +102,7 @@ html[dir="rtl"] .ba .lbl{letter-spacing:.03em}
 .gallery{background:var(--white)}
 .grow{display:flex;flex-direction:column;gap:6px}
 .tile{position:relative;overflow:hidden;background:var(--green-950)}
-.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.tile img{width:100%;height:100%;object-fit:contain;transition:transform .9s var(--ease)}
 .tile:hover img{transform:scale(1.03)}
 .tile.full{height:clamp(340px,60vh,620px)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:6px}
@@ -141,20 +141,20 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
   .stat:nth-child(2n){border-inline-end:none}
 }
 </style>
-<meta name="description" content="A 25,000 m² government hospital landscape by Green Arch in Riyadh — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery." />
+<meta name="description" content="A 25,000 m² government hospital landscape by Green Arch in Wadi Al-Dawasir — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery, by day and after dark." />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://greenarchdesign.online/hospital.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Green Arch" />
 <meta property="og:title" content="Hospital Grounds — Landscape Design | Green Arch" />
-<meta property="og:description" content="A 25,000 m² government hospital landscape by Green Arch in Riyadh — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery." />
+<meta property="og:description" content="A 25,000 m² government hospital landscape by Green Arch in Wadi Al-Dawasir — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery, by day and after dark." />
 <meta property="og:url" content="https://greenarchdesign.online/hospital.html" />
 <meta property="og:image" content="https://greenarchdesign.online/assets/projects/hospital/hero.jpg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="ar_SA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Hospital Grounds — Landscape Design | Green Arch" />
-<meta name="twitter:description" content="A 25,000 m² government hospital landscape by Green Arch in Riyadh — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery." />
+<meta name="twitter:description" content="A 25,000 m² government hospital landscape by Green Arch in Wadi Al-Dawasir — shaded circulation, courtyard gardens and a walking loop, from masterplan to delivery, by day and after dark." />
 <meta name="twitter:image" content="https://greenarchdesign.online/assets/projects/hospital/hero.jpg" />
 <meta name="theme-color" content="#1C3627" />
 <link rel="icon" type="image/png" href="/favicon.png" />
@@ -188,11 +188,11 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
   <div class="veil"></div>
   <div class="hero-inner"><div class="wrap">
     <a href="government.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="back">All projects</span></a>
-    <span class="eyebrow" style="color:var(--sage-soft)" data-i18n="hero_kicker">Government · Landscape · Riyadh</span>
+    <span class="eyebrow" style="color:var(--sage-soft)" data-i18n="hero_kicker">Government · Landscape · Wadi Al-Dawasir</span>
     <h1 data-i18n="hero_title">Hospital Grounds</h1>
-    <p class="lead" data-i18n="hero_lead">25,000 m² of shaded circulation, courtyard gardens and calm — designed, detailed and delivered for a government hospital.</p>
+    <p class="lead" data-i18n="hero_lead">25,000 m² of shaded circulation, courtyard gardens and calm — designed, detailed and delivered for a government hospital, by day and after dark.</p>
     <div class="chips">
-      <span class="chip"><b data-i18n="c_loc">Location</b> · <span data-i18n="c_loc_v">Riyadh</span></span>
+      <span class="chip"><b data-i18n="c_loc">Location</b> · <span data-i18n="c_loc_v">Wadi Al-Dawasir</span></span>
       <span class="chip"><b data-i18n="c_area">Area</b> · 25,000 m²</span>
       <span class="chip"><b data-i18n="c_scope">Scope</b> · <span data-i18n="c_scope_v">Landscape, concept → handover</span></span>
       <span class="chip"><b data-i18n="c_sector">Sector</b> · <span data-i18n="c_sector_v">Government</span></span>
@@ -259,22 +259,29 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
   </div>
 </section>
 
-<!-- SLIDER 2: designed -> built -->
-<section class="compare pad">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow" data-i18n="built_eyebrow">Designed, then delivered</span>
-      <h2 data-i18n="built_title">We build what we draw.</h2>
-      <p data-i18n="built_body">Drag to compare the design with the built result. Drop your on-site photos into the built slots and this becomes the proof.</p>
+<!-- WADI AL-DAWASIR: full project gallery -->
+<section class="gallery pad" style="background:var(--cream-2)">
+  <div class="wrap sec-head reveal"><span class="eyebrow" data-i18n="dw_eyebrow">Wadi Al-Dawasir, in full</span><h2 data-i18n="dw_title2">Shade, planting and stone — by day.</h2></div>
+  <div class="grow reveal">
+    <div class="tile full"><img src="assets/projects/dawasir/day1.jpg" alt="Hedge-lined walkway shaded by trees" loading="lazy" />
+      <div class="cap"><p><span class="k" data-i18n="dw_g1k">The walkway</span><span data-i18n="dw_g1">A hedge-lined path with benches, shaded by rows of trees.</span></p></div></div>
+    <div class="split">
+      <div class="tile"><img src="assets/projects/dawasir/day2.jpg" alt="Housing block and covered parking under a cloudy sky" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="dw_g2k">Overcast</span><span data-i18n="dw_g2">The housing block and covered parking under a cloudy sky.</span></p></div></div>
+      <div class="tile"><img src="assets/projects/dawasir/hero.jpg" alt="Courtyard fountain framed by residential blocks" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="dw_g0k">The courtyard</span><span data-i18n="dw_g0">Flowering trees and a working fountain, framed by residential blocks.</span></p></div></div>
     </div>
-    <div class="ba reveal" id="ba2">
-      <div class="layer after"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h4l2-2h6l2 2h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg><span data-i18n="built_slot">Built · add your on-site photo<br>assets/projects/hospital/built-1.jpg</span></div></div>
-      <div class="layer before"><img src="assets/projects/hospital/plaza.jpg" alt="Design render of the courtyard garden" /></div>
-      <span class="lbl l" data-i18n="lbl_design">Design</span>
-      <span class="lbl r" data-i18n="lbl_built">Built on site</span>
-      <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+  </div>
+  <div class="wrap sec-head reveal" style="margin-top:clamp(48px,6vw,88px)"><span class="eyebrow" data-i18n="dw_eyebrow2">After dark</span><h2 data-i18n="dw_title3">Lit for the evening.</h2></div>
+  <div class="grow reveal">
+    <div class="tile full"><img src="assets/projects/dawasir/night1.jpg" alt="Warmly lit entry framed by carved timber and bougainvillea" loading="lazy" />
+      <div class="cap"><p><span class="k" data-i18n="dw_n0k">The entry</span><span data-i18n="dw_n0">A warmly lit front door, framed by carved timber and bougainvillea.</span></p></div></div>
+    <div class="split">
+      <div class="tile"><img src="assets/projects/dawasir/night2.jpg" alt="Warm interior light on a covered porch" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="dw_n1k">A second entry</span><span data-i18n="dw_n1">Warm interior light spills onto the covered porch.</span></p></div></div>
+      <div class="tile"><img src="assets/projects/dawasir/night3.jpg" alt="Row of housing blocks lit along the walkway" loading="lazy" />
+        <div class="cap"><p><span class="k" data-i18n="dw_n2k">The street</span><span data-i18n="dw_n2">A row of housing blocks, lit along the walkway.</span></p></div></div>
     </div>
-    <div class="hint reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg><span data-i18n="drag_hint2">Drag to compare</span></div>
   </div>
 </section>
 
@@ -318,25 +325,29 @@ footer{background:var(--green-950);color:rgba(244,241,231,.68);padding:34px 0}
 const I18N={ar:{
   nav_process:"كيف نفكر",nav_projects:"المشاريع",nav_about:"الاستوديو",nav_contact:"تواصل معنا",nav_cta:"لنناقش مشروعك",
   back:"كل المشاريع",
-  hero_kicker:"حكومي · تنسيق مواقع · الرياض",hero_title:"حديقة المستشفى",
-  hero_lead:"٢٥٬٠٠٠ م² من الممرات المظللة والأفنية الخضراء والهدوء — مصمّمة ومُفصّلة ومُنفَّذة لمستشفى حكومي.",
-  c_loc:"الموقع",c_loc_v:"الرياض",c_area:"المساحة",c_scope:"النطاق",c_scope_v:"تنسيق، من الفكرة إلى التسليم",c_sector:"القطاع",c_sector_v:"حكومي",
+  hero_kicker:"حكومي · تنسيق مواقع · وادي الدواسر",hero_title:"حديقة المستشفى",
+  hero_lead:"٢٥٬٠٠٠ م² من الممرات المظللة والأفنية الخضراء والهدوء — مصمّمة ومُفصّلة ومُنفَّذة لمستشفى حكومي، نهارًا وبعد الغروب.",
+  c_loc:"الموقع",c_loc_v:"وادي الدواسر",c_area:"المساحة",c_scope:"النطاق",c_scope_v:"تنسيق، من الفكرة إلى التسليم",c_sector:"القطاع",c_sector_v:"حكومي",
   brief_eyebrow:"الموجز",brief_title:"المستشفى يجب أن يكون حديقة، لا موقف سيارات.",
   brief_body:"كان على الموقع أن ينقل آلاف المرضى والعائلات والموظفين بين المباني — في ظلٍّ وأمانٍ وهدوء. مهمتنا: تحويل ٢٥٬٠٠٠ م² من المساحات المتبقية إلى منظرٍ متصل من الممرات المظللة والأفنية الخضراء ومنطقة ألعاب للأطفال ومسار مشيٍ متواصل.",
   aerial_cap:"المشروع من الأعلى — التنسيق يتخلّل مباني المستشفى.",
   think_eyebrow:"التفكير",think_title:"من الرسم إلى التصميم.",
   think_body:"بدأ كل متر مربع كمخطط تنسيق للموقع. اسحب الشريط لمقارنة المخطط التنفيذي بالتصميم المُصوَّر.",
-  lbl_drawing:"مخطط الموقع",lbl_render:"التصميم المُصوَّر",drag_hint:"اسحب للمقارنة",drag_hint2:"اسحب للمقارنة",
+  lbl_drawing:"مخطط الموقع",lbl_render:"التصميم المُصوَّر",drag_hint:"اسحب للمقارنة",
   move1:"ممر مشاة مظلل يربط كل المباني.",move2:"أفنية خضراء كنقاط راحة.",move3:"منطقة ألعاب للأطفال وجلسات.",move4:"مسار متواصل للمشي والجري.",
   design_eyebrow:"التصميم",design_title:"كيف صُمّم ليكون الإحساس.",
   g1_k:"الممر",g1:"ممرٌ مزروع ومتواصل بين المباني — ظلٌّ في كل خطوة.",
   g2_k:"فناء أخضر",g2:"جهنمية وجلسات ونافورة — مكانٌ للتنفّس.",
   g3_k:"نقاط راحة",g3:"جيوب خضراء مظللة بمقاس العائلات المنتظرة.",
   g4_k:"من الأعلى",g4:"إيقاع الأشجار والضوء والجلسات على طول الممر.",
-  built_eyebrow:"صُمّم، ثم نُفِّذ",built_title:"ننفّذ ما نرسمه.",
-  built_body:"اسحب لمقارنة التصميم بالنتيجة المبنية. أضِف صور الموقع الحقيقية في الأماكن المخصصة ليصبح هذا هو الدليل.",
-  built_slot:"مبني · أضِف صورتك من الموقع<br>assets/projects/hospital/built-1.jpg",
-  lbl_design:"التصميم",lbl_built:"مبني في الموقع",
+  dw_eyebrow:"وادي الدواسر، بالكامل",dw_title2:"ظلٌّ وزراعةٌ وحجر — نهارًا.",
+  dw_g1k:"الممر",dw_g1:"ممرّ مصفوف بالسياج مع مقاعد، تظلّله صفوف الأشجار.",
+  dw_g2k:"أجواء غائمة",dw_g2:"الكتلة السكنية والمواقف المغطاة تحت سماء غائمة.",
+  dw_g0k:"الفناء",dw_g0:"أشجار مزهرة ونافورة عاملة، تؤطّرها الكتل السكنية.",
+  dw_eyebrow2:"بعد الغروب",dw_title3:"مضاءة للمساء.",
+  dw_n0k:"المدخل",dw_n0:"باب مدخل مضاء بدفء، تؤطّره نجارة محفورة وجهنمية.",
+  dw_n1k:"مدخل ثانٍ",dw_n1:"ضوءٌ داخلي دافئ ينسكب على الشرفة المغطاة.",
+  dw_n2k:"الشارع",dw_n2:"صفّ من الكتل السكنية، مضاءة على طول الممر.",
   out_eyebrow:"النتيجة",
   s1:"مسطّح تنسيق تم تسليمه",s2:"ممر مظلل متواصل يربط كل المباني",s3:"أفنية ونقاط راحة خضراء",s4:"نباتات محلية قليلة الري",
   quote:"«تنسيق المستشفى جزء من العلاج — ظلٌّ وخُضرة ومكانٌ هادئ للمشي.»",
